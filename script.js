@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  
+let coders=["Gràcia","Marisa","Alexia","Kristina","Alisa","Ana C.","Anna G.","Candy","Carmen","Desirée","Faby","Gabrielle","Hellen","Joana","Judith","Laura C.","Laura M.","Rosa","Sandra","Sara","Sonia","Tamara","Valentina","Yuliya"]
+  
+let winner=coders[Math.floor(Math.random()*coders.length)];
+
 //la foto esta oculta
     $(".wonderwoman-img").hide();
 
@@ -13,21 +18,8 @@ $(document).ready(function () {
 // click mostramos imagen
         $(".wonderwoman-img").show();
 //   cambiamos el texto del botton 
-     $("#button").html('Volver a la lista');
-
-//  volvemos a inicio
- //??????----
-
-    $("#winner").show('HOLA');
-
-
-
- //pensamos
-//Creamos la lista de las coders
-// let listacoders = ["Alexia","Kristina","Marisa","Gràcia"]
-//let elementoAleatorio = listacoders[Math.floor(Math.random()*listacoders.length)];
-
-
+      $("#button").html('Volver a la lista');
+      $("#winner").text(winner);
       });
 
 });
