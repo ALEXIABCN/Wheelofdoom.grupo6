@@ -16,12 +16,19 @@ $(document).ready(function () {
      $("#button").html('Volver a la lista');
 
 //  volvemos a inicio
+ //??????----
+
+    $("#winner").show('HOLA');
 
 
+
+ //pensamos
+//Creamos la lista de las coders
+// let listacoders = ["Alexia","Kristina","Marisa","Gràcia"]
+//let elementoAleatorio = listacoders[Math.floor(Math.random()*listacoders.length)];
 
 
       });
-
 
 });
 
