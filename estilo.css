@@ -33,7 +33,7 @@ main{
     align-items: center;
 } 
 
-ul {
+#lista-coders ul {
     -webkit-columns: 200px 2;
     -moz-columns: 200px 2;
     columns: 200px 2;
@@ -42,7 +42,7 @@ ul {
     column-gap: 50px;    
 }
 
-ul li{
+#lista-coders ul li{
     color: #f2d450;
     font-size: 24px;      
 }
