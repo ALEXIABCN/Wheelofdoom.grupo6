@@ -20,13 +20,32 @@ $(document).ready(function () {
       }
 
       
+
+
+      
+
+      function sol(coders) {
+        return coders.sort().filter(function(item , pos, ary) {
+            return !pos || item != ary[pos - 1];
+        });
+    }
+
+
+
+
+
       $("#button").click(function(){
           if($("#lista-coders").is(":visible")){
-            elegirCoder();
+            elegirCoder();                                                      
           }
           else{
             volverLista();
           }
+
+
+
+         
+
       })
 
 });
