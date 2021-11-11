@@ -61,11 +61,12 @@ button{
     border-color: #f2d450;
 }
 
-.wonderwoman-img img{
+.wonderwinner img{
     max-height:90vh;
     border: #f2d450 solid 8px;
     border-radius: 1%;
 }
-
-
-winner
+#winner{
+    color: #fff;
+    font-size: 20px;
+}
