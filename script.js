@@ -7,8 +7,8 @@ $(document).ready(function () {
     let winner=coders[Math.floor(Math.random()*coders.length)];
 
     
-    coders.forEach(eachCoder);
-    function eachCoder(elemento) {
+    coders.forEach(addLi);
+    function addLi(elemento) {
         $("#lista-coders ul").append( "<li>" + elemento + "</li>");
     }
 
@@ -33,21 +33,6 @@ $(document).ready(function () {
         console.log(codersListFiltered) ;
       }
       
-      
-
-
-      
-
-      function sol(coders) {
-        return coders.sort().filter(function(item , pos, ary) {
-            return !pos || item != ary[pos - 1];
-        });
-    }
-
-
-
-
-
       $("#button").click(function(){
           if($("#lista-coders").is(":visible")){
             elegirCoder();                                                      
@@ -55,13 +40,7 @@ $(document).ready(function () {
           else{
             volverLista();
           }
-
-
-
-         
-
       })
-
 });
 
 
