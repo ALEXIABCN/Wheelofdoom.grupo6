@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   
     let coders=["Gràcia","Marisa","Alexia","Kristina","Alisa","Ana C.","Anna G.","Candy","Carmen","Desirée","Faby","Gabrielle","Hellen","Joana","Judith","Laura C.","Laura M.","Rosa","Sandra","Sara","Sonia","Tamara","Valentina","Yuliya"];    
-    
+    let coderWinner = [];
     
     let winner=coders[Math.floor(Math.random()*coders.length)];
 
@@ -12,9 +12,11 @@ $(document).ready(function () {
         $("#lista-coders ul").append( "<li>" + elemento + "</li>");
     }
 
-    let codersListFiltered = coders.filter(function(coder) {
-      return coder !== winner; 
-    });
+
+
+    // let codersListFiltered = coders.filter(function(coder) {
+    //   return coder !== winner; 
+    // });
 
     $(".wonderwinner").hide();//la foto esta oculta por decto
     
@@ -26,11 +28,12 @@ $(document).ready(function () {
         $("#winner").text(winner); // agregamos el nombre de la elegida al azar
       }
 
-      function volverLista(){
+      function volverLista(winner){
         $(".wonderwinner").hide();//la foto esta oculta por decto
         $("#button").text('Elegir Coder'); //el texto por defecto
         $("#lista-coders").show();
-        console.log(codersListFiltered) ;
+        coders.splice(winner,1);
+        coderWinner.push(winner);
       }
       
       $("#button").click(function(){
