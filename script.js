@@ -1,15 +1,16 @@
 $(document).ready(function () {
   let coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
-  
-  coders.forEach(addLi);
+
+ 
   function addLi(elemento) {
     $("#lista-coders ul").append("<li>" + elemento + "</li>");
   }
+  coders.forEach(addLi);
 
   $(".wonderwinner").hide();//la foto esta oculta por decto
   function elegirCoder() {
     let winner = coders[Math.floor(Math.random() * coders.length)];
-    coders=coders.filter(coder=>coder!==winner)
+    coders = coders.filter(coder => coder !== winner)
     $("#lista-coders ul").empty()
     coders.forEach(addLi);
 

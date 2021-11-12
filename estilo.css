@@ -67,6 +67,19 @@ button{
     border-radius: 1%;
 }
 #winner{
-    color: #fff;
-    font-size: 20px;
+    color: rgb(0, 174, 255);
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 3px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px;
+    background-image: url("img/bocadillo.png");
+    width: 336px;
+    height: 300px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
 }
