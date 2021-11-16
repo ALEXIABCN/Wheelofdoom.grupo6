@@ -1,5 +1,8 @@
 $(document).ready(function () {
   let coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
+  let codersActive = coders;
+
+
 
  
   function addLi(elemento) {
@@ -9,18 +12,65 @@ $(document).ready(function () {
 
   $(".wonderwinner").hide();//la foto esta oculta por decto
 
-  function elegirCoder() {
-    let winner = coders[Math.floor(Math.random() * coders.length)];
-    coders = coders.filter(coder => coder !== winner)
-    $("#lista-coders ul").empty()
+
+
+
+  function elegirCoder()  {
+  
+   
+    let winner = coders[Math.floor(Math.random() * coders.length)]
+    coders = coders.filter(coder => coder !== winner);
+    $("#lista-coders ul").empty();
     coders.forEach(addLi);
 
     $(".lista-coders").hide(); // ocultamos la lista de las coders
     $(".wonderwinner").show();// mostramos imagen
     $("#button").text('Volver a la lista');// cambiamos el texto del botton
-    $("#winner").text(winner); // agregamos el nombre de la elegida al azar
+    $("#winner").text(); // agregamos el nombre de la elegida al azar
+    $("elegirCoder").reiniciar();
+   
   }
 
+
+
+
+/*
+
+  function elegirCoder() {
+
+
+		if (codersActive.length >= 1) {
+
+			let num = Math.floor(Math.random() * codersActive.length);
+			let name = codersActive[num];
+			codersActive.splice(num, 1);
+			$('.answer').html("<p class='winner'>" + name + "</p>");
+			$("coders:contains('" + name + "')").hide();
+		}
+
+		else {
+			reiniciar()
+			elegirCoder()
+		
+			
+		}
+	};
+
+*/
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
