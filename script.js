@@ -23,6 +23,16 @@ $(document).ready(function () {
     $(".wonderwinner").show();// mostramos imagen
     $("#button").text('Volver a la lista');// cambiamos el texto del botton
     $("#winner").text(winner); // agregamos el nombre de la elegida al azar
+
+
+    let boton = document.querySelector("#button")
+
+    
+      let etiquetaAudio = document.createElement("audio")
+      etiquetaAudio.setAttribute("src", "Sonido/Wonderaudio.mp3")
+      etiquetaAudio.play()
+    
+
   }
 
 
