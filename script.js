@@ -11,8 +11,8 @@ $(document).ready(function () {
   $(".wonderwinner").hide();//la foto esta oculta por defecto
 
 
-
   function elegirCoder() {
+
     let winner = coders[Math.floor(Math.random() * coders.length)];
     coders = coders.filter(coder => coder !== winner)
     $("#lista-coders ul").empty()
@@ -24,16 +24,39 @@ $(document).ready(function () {
     $("#button").text('Volver a la lista');// cambiamos el texto del botton
     $("#winner").text(winner); // agregamos el nombre de la elegida al azar
 
-
-    let boton = document.querySelector("#button")
-
-    
-      let etiquetaAudio = document.createElement("audio")
-      etiquetaAudio.setAttribute("src", "Sonido/Wonderaudio.mp3")
-      etiquetaAudio.play()
-    
+    $("#button")
+    let etiquetaAudio = document.createElement("audio")
+    etiquetaAudio.setAttribute("src", "Sonido/Wonderaudio.mp3")
+    etiquetaAudio.play()
 
   }
+
+  function volverLista() {
+    $(".wonderwinner").hide();//la foto esta oculta por decto
+    $("#button").text('Elegir Coder'); //el texto por defecto
+    $("#lista-coders").show();
+
+    
+    if(coders.length === 0){
+      coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
+      coders.forEach(addLi);
+    }
+  }
+
+// crear grupos 
+
+let botonCrearGrupo = document.getElementById("btn-grupos");
+
+botonCrearGrupo.addEventListener("click", () => {
+
+  let input = document.getElementById("searchInput");
+  let valor = input.value;
+  var shuffled = coders.sort(function(){return .5 - Math.random()});
+  var selected = shuffled.slice(0,valor);
+  alert("El valor del campo es:" + selected);
+
+});
+
 
 
 
@@ -66,18 +89,6 @@ $(document).ready(function () {
   // };
 
 
-
-  function volverLista() {
-    $(".wonderwinner").hide();//la foto esta oculta por decto
-    $("#button").text('Elegir Coder'); //el texto por defecto
-    $("#lista-coders").show();
-
-    if(coders.length === 0){
-      coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
-      coders.forEach(addLi);
-    }
-
-  }
 
   $("#button").click(function () {
     if ($("#lista-coders").is(":visible")) {
