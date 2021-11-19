@@ -180,9 +180,9 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     #lista-coders ul {
-        -webkit-columns: 200px 2;
-        -moz-columns: 200px 2;
-        columns: 200px 2;
+        -webkit-columns:120px 2;
+        -moz-columns:120px 2;
+        columns:120px 2;
         -webkit-column-gap: inherit;
         -moz-column-gap: inherit;
         column-gap: inherit;
@@ -190,8 +190,8 @@ input[type=number]::-webkit-inner-spin-button {
     }
     #lista-coders ul li{
         color: #f2d450;
-        font-size: 18px;      
-    }
+        font-size: 16px;      
+    }git
 
     #winner{
         background-size: 100%;
