@@ -53,7 +53,7 @@ main{
     column-gap: 50px;    
 }
 
-#lista-coders ul li{
+#lista-coders ul li, #lista-coders ul ol{
     color: #f2d450;
     font-size: 24px;      
 }
@@ -158,11 +158,11 @@ input[type=number]::-webkit-inner-spin-button {
     background-color:#00000036;
     padding: 15px;
     border-radius: 15px;
+    margin-bottom: 15px;
 }
-.div-group h3{
-    text-align: center;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
+.div-group h5{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     border-bottom: #f2d450 dotted 2px;
 }
 
@@ -189,7 +189,7 @@ input[type=number]::-webkit-inner-spin-button {
         width: 90%;
     }
 
-    #lista-coders ul {
+    #lista-coders ul, #lista-coders ul ol {
         -webkit-columns:120px 2;
         -moz-columns:120px 2;
         columns:120px 2;
@@ -199,6 +199,7 @@ input[type=number]::-webkit-inner-spin-button {
         margin-top: 20px;
         margin-left: 30px;
         margin-bottom: 40px;
+        align-self: flex-start;
     }
     #lista-coders ul li{
         color: #f2d450;

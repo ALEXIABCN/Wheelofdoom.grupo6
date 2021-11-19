@@ -57,7 +57,7 @@ function crearGrupos(){
   while ( coders.length > 0) {
     let pieces = coders.splice(0, N);
     let formatted = pieces.map((piece) =>  piece + "<br>" );
-    groups.push("<div class='div-group'><h3>Grupo"+ groups.indexOf() +"</h3>"+ formatted.join('')+"</div>");
+    groups.push("<div class='div-group'><h5>Grupo"+ groups.indexOf() +"</h5>"+ formatted.join('')+"</div>");
   }
 
    $("#lista-coders ul").empty();
