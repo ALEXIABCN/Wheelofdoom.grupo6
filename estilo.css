@@ -180,9 +180,9 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     #lista-coders ul {
-        -webkit-columns: 200px 1;
-        -moz-columns: 200px 1;
-        columns: 200px 1;
+        -webkit-columns: 200px 2;
+        -moz-columns: 200px 2;
+        columns: 200px 2;
         -webkit-column-gap: inherit;
         -moz-column-gap: inherit;
         column-gap: inherit;
