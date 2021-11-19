@@ -58,7 +58,6 @@ function crearGrupos(){
     let pieces = coders.splice(0, N);
     let formatted = pieces.map((piece) =>  piece + "<br>" );
     groups.push("Grupo"+ groups.indexOf(pieces) +"<br>"+ formatted.join(''));
-
   }
 
    $("#lista-coders ul").empty();
