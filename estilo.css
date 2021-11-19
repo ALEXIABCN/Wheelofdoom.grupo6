@@ -154,7 +154,17 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-
+.div-group{
+    background-color:#00000036;
+    padding: 15px;
+    border-radius: 15px;
+}
+.div-group h3{
+    text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: #f2d450 dotted 2px;
+}
 
 
 
