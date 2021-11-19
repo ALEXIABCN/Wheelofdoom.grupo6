@@ -70,7 +70,17 @@ button{
     border-style: none;
     border:  6px solid;
     border-color: #f2d450;
+    box-shadow: none;
+    transition-property: background-color, box-shadow;
+    transition-duration: .2s;
+    transition-timing-function: linear;
 }
+
+button:hover{
+    background-color: #0c679f;
+    box-shadow: 0 0 20px 0 #f2d450;
+}
+
 .wonderwinner{
     position: relative;
 }
@@ -98,6 +108,55 @@ button{
     align-items: center;
     padding-top: 70px;
 }
+
+
+/* ---------------------   estilos de grupo  ------------------------------ */
+.form{
+    font-size: 20px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form>div{
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    align-items: stretch;
+}
+
+
+.form label{
+    color: #f2d450;
+    align-self:center;
+}
+
+input[type=number]{
+    background-color: #f2d450;
+    padding-left: 4px;
+    border: 0;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 60px;
+    text-align: center;
+}
+
+input[type=number]:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.966);
+  }
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+#btn-groups{
+    margin-top: 10px;
+}
+
+
+
+
+
 
 
 /* ------------------   MEDIA QUERIES RESPONSIVE  -------------------- */

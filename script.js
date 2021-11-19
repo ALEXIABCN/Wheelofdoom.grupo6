@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     let winner = coders[Math.floor(Math.random() * coders.length)];
     coders = coders.filter(coder => coder !== winner)
-    $("#lista-coders ul").empty()
+    $("#lista-coders ul").empty();
     coders.forEach(addLi);
 
     
@@ -23,78 +23,70 @@ $(document).ready(function () {
     $(".wonderwinner").show();// mostramos imagen
     $("#button").text('Volver a la lista');// cambiamos el texto del botton
     $("#winner").text(winner); // agregamos el nombre de la elegida al azar
-
-    $("#button")
+    $(".crearGrupos").show();
     let etiquetaAudio = document.createElement("audio")
     etiquetaAudio.setAttribute("src", "Sonido/Wonderaudio.mp3")
     etiquetaAudio.play()
-
+    $(".crearGrupos").hide();
   }
 
   function volverLista() {
     $(".wonderwinner").hide();//la foto esta oculta por decto
     $("#button").text('Elegir Coder'); //el texto por defecto
     $("#lista-coders").show();
-
+    $(".crearGrupos").show();
     
+
     if(coders.length === 0){
       coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
       coders.forEach(addLi);
     }
+
+
   }
 
-// crear grupos 
+// ----------------------    crear grupos    -------------------------------------- 
 
-let botonCrearGrupo = document.getElementById("btn-grupos");
+function crearGrupos(){
+  let numberOfGroups = $("#input-text").val();
+  let N = Math.ceil(coders.length / numberOfGroups);
+  coders = coders.sort ( () => Math.random() - 0.5 );
+  
+  let groups = [];
 
-botonCrearGrupo.addEventListener("click", () => {
+  while ( coders.length > 0) {
+    let pieces = coders.splice(0, N);
+    let formatted = pieces.map((piece) =>  piece + "<br>" );
+    groups.push(formatted);
+  }
 
-  let input = document.getElementById("searchInput");
-  let valor = input.value;
-  var shuffled = coders.sort(function(){return .5 - Math.random()});
-  var selected = shuffled.slice(0,valor);
-  alert("El valor del campo es:" + selected);
+  $("#lista-coders ul").empty();
+  groups.forEach(addLi);
+  $("#button").text('Volver a la lista');
+  
+}
 
+$("#btn-groups").click(function () {
+  if(coders.length != 24){
+    coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
+    coders.forEach(addLi);
+  }
+    crearGrupos();$(".crearGrupos").hide();
+    
 });
 
 
-
-
-  // /*-------------------------------------------FUNCTION----CREAR-GRUPOS---------------------------------------*/
-  // function crearGrupos() {
-  //   let coders = ["Gràcia", "Marisa", "Alexia", "Kristina", "Alisa", "Ana C.", "Anna G.", "Candy", "Carmen", "Desirée", "Faby", "Gabrielle", "Hellen", "Joana", "Judith", "Laura C.", "Laura M.", "Rosa", "Sandra", "Sara", "Sonia", "Tamara", "Valentina", "Yuliya"];
-  //   //codersActive = ['Sara', 'Judith', 'Helen', 'Tamara', 'Candy', 'Laura Contreras', 'Gabrielle', 'Carmen', 'Yuliya', 'Anna Girona', 'Desirée', 'Sonia', 'Joana', 'Ana Casas', 'Alisa', 'Faby', 'Valentina', 'Laura Mayas', 'Rosa', 'Sandra', 'Kristina', 'Gràcia', 'Alexia', 'Marisa',];
-  //   $("#winner").remove();  //winner
-  //   $(".grupo").remove();   // igual
-  //   $(".coders").show();   //coders
-  //   coders = coders.map(i => [Math.random(), i]).sort().map(i => i[1]);
-  //   let parts = $('.select option:selected').text();
-  //   let result = [];
-  //   for (let i = parts; i > 0; i--) {
-  //     result.push(codersActive.splice(0, Math.ceil(codersActive.length / i)).join(', '));
-  //   }
-  //   $('.answer').append(`<p class="grupo">Grupo 1: ${result[0]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 2: ${result[1]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 3: ${result[2]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 4: ${result[3]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 5: ${result[4]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 6: ${result[5]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 7: ${result[6]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 8: ${result[7]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 9: ${result[8]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 10: ${result[9]}</p>`);
-  //   $('.answer').append(`<p class="grupo">Grupo 11: ${result[10]}</p>`)
-  //   $('.answer').append(`<p class="grupo">Grupo 12: ${result[11]}</p>`);
-  //   $(".grupo:contains('" + undefined + "')").hide();
-  // };
-
-
-
   $("#button").click(function () {
-    if ($("#lista-coders").is(":visible")) {
+    let t = $("#button");
+    if($("#lista-coders ul").is(":visible")){
+       $("#lista-coders ul").empty();
+      }
+   
+    if (t.text() === "Elegir Coder"){
       elegirCoder();
     }
-    else {
+
+    else if(t.text() === "Volver a la lista"){
       volverLista();
     }
   })
