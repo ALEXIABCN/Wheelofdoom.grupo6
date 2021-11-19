@@ -78,17 +78,19 @@ $("#btn-groups").click(function () {
 
   $("#button").click(function () {
     let t = $("#button");
-    if($("#lista-coders ul").is(":visible")){
-       $("#lista-coders ul").empty();
-     }
    
     if (t.text() == "Elegir Coder"){
       elegirCoder();
     }
 
     else if(t.text() == "Volver a la lista"){
+      if($("#lista-coders ul").is(":visible")){
+      $("#lista-coders ul").empty();
+      }
       volverLista();
     }
+
+    else{elegirCoder();}
   })
 });
 
